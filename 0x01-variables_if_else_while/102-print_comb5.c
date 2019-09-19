@@ -16,15 +16,18 @@ int main(void)
 	{
 	  for (k = i; k < 10; k++)
 	    {
-	      for (m = j+1; m < 10; m++)
+	      for (m = j + 1; m < 10; m++)
 		{
 		  putchar(i + '0');
 		  putchar(j + '0');
 		  putchar(' ');
 		  putchar(k + '0');
 		  putchar(m + '0');
-		  putchar(',');
-		  putchar(' ');
+		  if (i != m /*condition to change*/)
+		    {
+		      putchar(',');
+		      putchar(' ');
+		    }
 		}
 	    }
 	}
