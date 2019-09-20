@@ -8,28 +8,19 @@ int main(void)
 {
   int i;
   int j;
-  int k;
-  int m;
-  for (i = 0; i < 10; i++)
+  for (i = 0; i < 100; i++)
     {
-      for (j = 0; j < 10; j++)
-	{
-	  for (k = i; k < 10; k++)
-	    {
-	      for (m = j + 1; m < 10; m++)
-		{
-		  putchar(i + '0');
-		  putchar(j + '0');
+      for (j = i + 1; j < 100; j++)
+	{	  putchar(i / 10 + '0');
+		  putchar(i % 10+ '0');
 		  putchar(' ');
-		  putchar(k + '0');
-		  putchar(m + '0');
-		  if (i != m /*condition to change*/)
+		  putchar(j / 10 + '0');
+		  putchar(j % 10 + '0');
+		  if (i != 98 || j != 99 /*condition to change*/)
 		    {
 		      putchar(',');
 		      putchar(' ');
 		    }
-		}
-	    }
 	}
     }
   putchar('\n');
