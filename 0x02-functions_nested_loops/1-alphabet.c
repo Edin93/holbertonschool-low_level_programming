@@ -1,5 +1,8 @@
 #include "holberton.h"
-
+/**
+ * print_alphabet -  print alphabets.
+ * returns nothing.
+ */
 void print_alphabet(void)
 {
 	char i = 'a';

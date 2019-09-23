@@ -1,8 +1,8 @@
 #include "holberton.h"
 /**
  * print_sign - prints the sign of a number.
- * @c: parameter type int
- * Return: 0 if the parameter is not a letter, lowercase or uppercase
+ * @n: parameter type int
+ * Return: 0 if n = 0
  **/
 int print_sign(int n)
 {
