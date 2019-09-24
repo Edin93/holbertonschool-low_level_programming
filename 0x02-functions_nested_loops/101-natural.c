@@ -2,7 +2,7 @@
 /**
  * natural - print sum of multiples of 3 or 5 below 1024.
  */
-void natural(void)
+int main(void)
 {
 	int i;
 	int s = 0;
@@ -13,5 +13,6 @@ void natural(void)
 			s+=i;
 		}
 	}
-	printf("%d", s);
+	printf("%d\n", s);
+	return (0);
 }
