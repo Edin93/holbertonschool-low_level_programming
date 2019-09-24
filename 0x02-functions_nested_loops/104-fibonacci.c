@@ -6,7 +6,7 @@
 int main(void)
 {
 	int i;
-	double arr[50];
+	long double arr[50];
 
 	arr[0] = 1;
 	arr[1] = 2;
@@ -17,7 +17,7 @@ int main(void)
 	}
 	for (i = 0; i < 98; i++)
 	{
-		printf("%.0lf", arr[i]);
+		printf("%.0Lf", arr[i]);
 		if (i < 97)
 		{
 			printf(", ");
