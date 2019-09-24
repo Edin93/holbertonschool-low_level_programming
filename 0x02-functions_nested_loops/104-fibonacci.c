@@ -8,8 +8,8 @@ int main(void)
 	int i;
 	long double arr[50];
 
-	arr[0] = 1;
-	arr[1] = 2;
+	long u0 = 1;
+	long u1 = 2;
 
 	for (i = 2; i < 98; i++)
 	{
