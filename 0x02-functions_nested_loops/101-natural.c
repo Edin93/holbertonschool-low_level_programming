@@ -1,0 +1,17 @@
+#include <stdio.h>
+/**
+ * natural - print sum of multiples of 3 or 5 below 1024.
+ */
+void natural(void)
+{
+	int i;
+	int s = 0;
+	for (i = 0; i < 1024; i++)
+	{
+		if (i % 3 == 0 || i % 5 == 0)
+		{
+			s+=i;
+		}
+	}
+	printf("%d", s);
+}
