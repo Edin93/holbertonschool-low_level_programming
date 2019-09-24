@@ -7,7 +7,7 @@ int main(void)
 {
 	int i;
 	long arr[50];
-	long long s;
+	long s = 0;
 
 	arr[0] = 1;
 	arr[1] = 2;
@@ -25,7 +25,6 @@ int main(void)
 		}
 		i++;
 	}
-	printf("%lld", s);
-	printf("\n");
+	printf("%ld\n", s);
 	return (0);
 }
