@@ -1,52 +1,56 @@
-#include "holberton.h"
+#include <stdio.h>
 /**
- * print_times_table - print times table.
- * @n: type int
+ * main - prints first 98 fibonacci numbers.
+ * Return: 0
  */
-void print_times_table(int n)
+int main(void)
 {
-	int i, j, m;
+	int i = 0;
+	unsigned long U0 = 1;
+	unsigned long U1 = 2;
+	unsigned long Un = 0;
+	unsigned long p1 = 0;
+	unsigned long p2 = 0;
+	unsigned long l = 4294967295;
+	unsigned long l2 = 1000000000;
+	unsigned long Ur0 = 0;
+	unsigned long Ur1 = 0;
+	unsigned long Ud0 = 0;
+	unsigned long Ud1 = 0;
 
-	if (n >= 0 && n < 16)
+	while (i < 98)
 	{
-		for (i = 0; i <= n; i++)
+		if (i == 0)
 		{
-			for (j = 0; j <= n; j++)
+			printf("%lu", U0);
+		}
+		else if (i == 1)
+		{
+			printf("%lu", U1);
+		}
+		else
+		{
+			Un = U0 + U1;
+			U0 = U1;
+			U1 = Un;
+
+			if (U0 > l || U1 > l || 
+			if (Un > l)
 			{
-				m = i * j;
-				if (m == 0 && j == 0)
-				{
-					_putchar(m + '0');
-				}
-				else
-				{
-					if (m < 10)
-					{
-						_putchar(',');
-						_putchar(' ');
-						_putchar(' ');
-						_putchar(' ');
-						_putchar(m + '0');
-					}
-					else if (m >= 10 && m < 100)
-					{
-						_putchar(',');
-						_putchar(' ');
-						_putchar(' ');
-						_putchar(m / 10 + '0');
-						_putchar(m % 10 + '0');
-					}
-					else
-					{
-						_putchar(',');
-						_putchar(' ');
-						_putchar(m / 100 + '0');
-						_putchar((m / 10) % 10 + '0');
-						_putchar(m % 10 + '0');
-					}
-				}
+				printf("%lu", Un / l2);
+				printf("%lu", Un % l2);
 			}
-			_putchar('\n');
+		else
+		{
+			printf("%lu", Un);
 		}
 	}
+		if (i < 97)
+		{
+			printf(", ");
+		}
+		i++;
+	}
+	printf("\n");
+	return (0);
 }

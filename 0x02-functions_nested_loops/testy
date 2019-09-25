@@ -1,0 +1,7 @@
+#include <stdio>
+
+int main(void)
+{
+int i;
+unsigned long U0 = 0;
+}

@@ -13,6 +13,10 @@ int main(void)
 	unsigned long p2 = 0;
 	unsigned long l = 4294967295;
 	unsigned long l2 = 1000000000;
+	unsigned long Ur0 = 0;
+	unsigned long Ur1 = 0;
+	unsigned long Ud0 = 0;
+	unsigned long Ud1 = 0;
 
 	while (i < 98)
 	{
@@ -29,6 +33,7 @@ int main(void)
 			Un = U0 + U1;
 			U0 = U1;
 			U1 = Un;
+
 			if (Un > l)
 			{
 				printf("%lu", Un / l2);
