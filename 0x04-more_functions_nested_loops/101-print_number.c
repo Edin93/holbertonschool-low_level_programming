@@ -7,6 +7,7 @@
 void print_number(int n)
 {
 	int limit;
+	int a;
 	int dividor = 1;
 
 	if (n < 0)
@@ -20,6 +21,8 @@ void print_number(int n)
 	}
 	else
 	{
+		a = n % 10;
+		n = n / 10;
 		while (n / dividor >= 10)
 			dividor = dividor * 10;
 		limit = dividor;
@@ -30,5 +33,6 @@ void print_number(int n)
 			n = n  % limit;
 			limit = limit / 10;
 		}
+		_putchar(a + '0');
 	}
 }
