@@ -1,0 +1,30 @@
+#include "holberton.h"
+/**
+ * print_number - print numbers
+ * @n: integer
+ */
+void print_number(int n)
+{
+	int x, numb;
+	int limit;
+	int dividor = 1;
+
+	if (n < 0)
+	{
+		x = -n;
+		_putchar('-');
+	}
+	else
+		x = n;
+	while (x / dividor > 1)
+		dividor = dividor * 10;
+	limit = dividor;
+
+	while (limit >= 1)
+	{
+		numb = (x * 10) / limit;
+		_putchar(numb + '0');
+	        x = (x * 10) % limit;
+		limit = limit / 10;
+	}
+}
