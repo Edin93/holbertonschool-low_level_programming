@@ -10,9 +10,11 @@ void print_number(int n)
 	int a;
 	int dividor = 1;
 
+	a = n % 10;
 	if (n < 0)
 	{
 		n = -n;
+		a = -a;
 		_putchar('-');
 	}
 	if (n < 10)
@@ -21,7 +23,6 @@ void print_number(int n)
 	}
 	else
 	{
-		a = n % 10;
 		n = n / 10;
 		while (n / dividor >= 10)
 			dividor = dividor * 10;
