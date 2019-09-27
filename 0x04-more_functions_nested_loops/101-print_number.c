@@ -26,10 +26,8 @@ void print_number(int n)
 
 		while (limit >= 1)
 		{
-			/* printf("\n"); */
-		        _putchar(n / limit + '0');
+			_putchar(n / limit + '0');
 			n = n  % limit;
-			/* printf("my number is: %d\n", n); */
 			limit = limit / 10;
 		}
 	}
