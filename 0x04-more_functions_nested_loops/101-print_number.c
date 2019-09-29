@@ -5,9 +5,9 @@
  */
 void print_number(int n)
 {
-	int limit;
-	int a;
-	int dividor = 1;
+	signed long int limit;
+	signed long int a;
+	signed long int dividor = 1;
 
 	a = n % 10;
 	if (n < 0)
