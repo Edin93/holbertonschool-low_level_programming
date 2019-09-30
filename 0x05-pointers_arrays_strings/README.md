@@ -1,0 +1,1 @@
+Learning about c pointers, arrays and strings.
