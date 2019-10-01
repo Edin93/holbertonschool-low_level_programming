@@ -31,5 +31,6 @@ int _atoi(char *s)
 		}
 		i++;
 	}
-	return (num * multi);
+	num = num * multi;
+	return (num);
 }
