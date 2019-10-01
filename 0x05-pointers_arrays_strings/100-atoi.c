@@ -15,15 +15,19 @@ int _atoi(char *s)
 	while (s[len] != '\0')
 	{
 		len++;
+		/* if (s[len] == 45 && getout == 0) */
+		/* 	multi *= -1; */
+		/* if (s[len + 1] >= 48 && s[len + 1] <= 57) */
+		/* 	getout = 1; */
 	}
-
+	/* getout = 0; */
 	while (i < len && getout == 0)
 	{
 		if (s[i] == 45)
 			multi *= -1;
 		if (s[i] >= 48 && s[i] <= 57)
 		{
-			num = num * 10 + (s[i] - 48);
+			num = num * 10 + multi * (s[i] - 48);
 			if (s[i + 1] >= 48 && s[i + 1] <= 57)
 				getout = 0;
 			else
@@ -31,6 +35,5 @@ int _atoi(char *s)
 		}
 		i++;
 	}
-	num = num * multi;
 	return (num);
 }
