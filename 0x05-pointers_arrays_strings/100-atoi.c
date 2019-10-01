@@ -12,12 +12,12 @@ int _atoi(char *s)
 	int multi = 1;
 	int getout = 0;
 
-	while(s[len] != '\0')
+	while (s[len] != '\0')
 	{
 		len++;
 	}
 
-	while(i < len && getout == 0)
+	while (i < len && getout == 0)
 	{
 		if (s[i] == 45)
 			multi *= -1;
