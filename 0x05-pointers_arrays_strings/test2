@@ -14,13 +14,20 @@ int _atoi(char *s)
 
 	while (s[len] != '\0')
 	{
+		if (s[len] == 45 && getout == 0)
+		{
+			multi *= -1;
+		}
+		if (s[i + 1] >= 48 && s[i + 1] <= 57)
+		{
+			getout = 1;
+		}
 		len++;
 	}
 
-	while (i < len && getout == 0)
+	getout = 0;
+	while (i <= len && getout == 0)
 	{
-		if (s[i] == 45)
-			multi *= -1;
 		if (s[i] >= 48 && s[i] <= 57)
 		{
 			num = num * 10 + (s[i] - 48);
