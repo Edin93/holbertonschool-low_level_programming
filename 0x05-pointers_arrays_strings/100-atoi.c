@@ -6,21 +6,13 @@
  */
 int _atoi(char *s)
 {
-	int i = 0;
-	int len = 0;
-	int num = 0;
+	int i, getout, len, num = 0;
 	int multi = 1;
-	int getout = 0;
 
 	while (s[len] != '\0')
 	{
 		len++;
-		/* if (s[len] == 45 && getout == 0) */
-		/* 	multi *= -1; */
-		/* if (s[len + 1] >= 48 && s[len + 1] <= 57) */
-		/* 	getout = 1; */
 	}
-	/* getout = 0; */
 	while (i < len && getout == 0)
 	{
 		if (s[i] == 45)
