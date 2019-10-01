@@ -1,0 +1,203 @@
+#include "holberton.h"
+#include <stdio.h>
+
+/**
+ * main - check the code for Holberton School students.
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+	int n;
+
+	n = _atoi("98");
+	printf("%d\n", n);
+	n = _atoi("-402");
+	printf("%d\n", n);
+	n = _atoi("          ------++++++-----+++++--98");
+	printf("%d\n", n);
+	n = _atoi("214748364");
+	printf("%d\n", n);
+	n = _atoi("0");
+	printf("%d\n", n);
+	n = _atoi("Suite 402");
+	printf("%d\n", n);
+	n = _atoi("         +      +    -    -98 Battery Street; San Francisco, CA 94111 - USA             ");
+	printf("%d\n", n);
+	n = _atoi("---++++ -++ Sui - te -   402 #cisfun :)");
+	printf("%d\n", n);
+
+	n = _atoi("214748364");
+        printf("%d\n", n);
+        n = _atoi("0");
+	printf(“%d\n”, n);
+	n = _atoi("Suite 402");
+	printf("%d\n", n);
+	n = _atoi(”         +      +    -    -98 Battery Street; San Franci \
+   sco, CA 94111 - USA             “);
+40│        printf(“%d\n”, n);
+41│
+42│        n = _atoi(“---++++ -++ Sui - te -   402 #cisfun :)“);
+43│        printf(“%d\n”, n);
+44│
+45│        n = _atoi(“-2147483648");
+46│        printf(“%d\n”, n);
+47│
+	48│        n = atoi(“-2147483648");
+49│        printf(“%d atoi\n”, n);
+50│
+51│        n = _atoi(“2147483647");
+52│        printf(“%d\n”, n);
+53│
+	54│        n = _atoi(“2147483648");
+55│        printf(“%d\n”, n);
+56│
+57│        n = atoi(“2147483648");
+58│        printf(“%d atoi\n”, n);
+59│
+	60│        n = _atoi(“121212121212121212");
+61│        printf(“%d\n”, n);
+62│
+63│        n = atoi(“121212121212121212");
+64│        printf(“%d atoi\n”, n);
+65│
+	66│        n = _atoi(“1.2.3.4.5");
+67│        printf(“%d\n”, n);
+69│        n = atoi(“1.2.3.4.5");
+70│        printf(“%d atoi\n”, n);
+71│
+	72│        n = _atoi(“-1.2.3.4.5");
+73│        printf(“%d\n”, n);
+74│
+75│        n = atoi(“-1.2.3.4.5");
+76│        printf(“%d atoi\n”, n);
+77│
+	78│        n = _atoi(“-2147483649");
+79│        printf(“%d\n”, n);
+80│
+81│        n = atoi(“-2147483649");
+82│        printf(“%d atoi\n”, n);
+83│
+	84│        n = _atoi(“123456789.123456789");
+85│        printf(“%d\n”, n);
+86│
+87│        n = atoi(“123456789.123456789");
+88│        printf(“%d atoi\n”, n);n = _atoi(“214748364");
+31│        printf(“%d\n”, n);
+32│
+33│        n = _atoi(“0");
+34│        printf(“%d\n”, n);
+35│
+	36│        n = _atoi(“Suite 402");
+37│        printf(“%d\n”, n);
+38│
+39│        n = _atoi(”         +      +    -    -98 Battery Street; San Franci\
+   sco, CA 94111 - USA             “);
+40│        printf(“%d\n”, n);
+41│
+42│        n = _atoi(“---++++ -++ Sui - te -   402 #cisfun :)“);
+43│        printf(“%d\n”, n);
+44│
+45│        n = _atoi(“-2147483648");
+46│        printf(“%d\n”, n);
+47│
+	48│        n = atoi(“-2147483648");
+49│        printf(“%d atoi\n”, n);
+50│
+51│        n = _atoi(“2147483647");
+52│        printf(“%d\n”, n);
+53│
+	54│        n = _atoi(“2147483648");
+55│        printf(“%d\n”, n);
+56│
+57│        n = atoi(“2147483648");
+58│        printf(“%d atoi\n”, n);
+59│
+	60│        n = _atoi(“121212121212121212");
+61│        printf(“%d\n”, n);
+62│
+63│        n = atoi(“121212121212121212");
+64│        printf(“%d atoi\n”, n);
+65│
+	66│        n = _atoi(“1.2.3.4.5");
+67│        printf(“%d\n”, n);
+69│        n = atoi(“1.2.3.4.5");
+70│        printf(“%d atoi\n”, n);
+71│
+	72│        n = _atoi(“-1.2.3.4.5");
+73│        printf(“%d\n”, n);
+74│
+75│        n = atoi(“-1.2.3.4.5");
+76│        printf(“%d atoi\n”, n);
+77│
+	78│        n = _atoi(“-2147483649");
+79│        printf(“%d\n”, n);
+80│
+81│        n = atoi(“-2147483649");
+82│        printf(“%d atoi\n”, n);
+83│
+	84│        n = _atoi(“123456789.123456789");
+85│        printf(“%d\n”, n);
+86│
+87│        n = atoi(“123456789.123456789");
+88│        printf(“%d atoi\n”, n);n = _atoi(“214748364");
+31│        printf(“%d\n”, n);
+32│
+33│        n = _atoi(“0");
+34│        printf(“%d\n”, n);
+35│
+	36│        n = _atoi(“Suite 402");
+37│        printf(“%d\n”, n);
+38│
+39│        n = _atoi(”         +      +    -    -98 Battery Street; San Franci\
+   sco, CA 94111 - USA             “);
+40│        printf(“%d\n”, n);
+41│
+42│        n = _atoi(“---++++ -++ Sui - te -   402 #cisfun :)“);
+43│        printf(“%d\n”, n);
+44│
+45│        n = _atoi(“-2147483648");
+46│        printf(“%d\n”, n);
+47│
+	48│        n = atoi(“-2147483648");
+49│        printf(“%d atoi\n”, n);
+50│
+51│        n = _atoi(“2147483647");
+52│        printf(“%d\n”, n);
+53│
+	54│        n = _atoi(“2147483648");
+55│        printf(“%d\n”, n);
+56│
+57│        n = atoi(“2147483648");
+58│        printf(“%d atoi\n”, n);
+59│
+	60│        n = _atoi(“121212121212121212");
+61│        printf(“%d\n”, n);
+62│
+63│        n = atoi(“121212121212121212");
+64│        printf(“%d atoi\n”, n);
+65│
+	66│        n = _atoi(“1.2.3.4.5");
+67│        printf(“%d\n”, n);
+69│        n = atoi(“1.2.3.4.5");
+70│        printf(“%d atoi\n”, n);
+71│
+	72│        n = _atoi(“-1.2.3.4.5");
+73│        printf(“%d\n”, n);
+74│
+75│        n = atoi(“-1.2.3.4.5");
+76│        printf(“%d atoi\n”, n);
+77│
+	78│        n = _atoi(“-2147483649");
+79│        printf(“%d\n”, n);
+80│
+81│        n = atoi(“-2147483649");
+82│        printf(“%d atoi\n”, n);
+83│
+	84│        n = _atoi(“123456789.123456789");
+85│        printf(“%d\n”, n);
+86│
+87│        n = atoi(“123456789.123456789");
+88│        printf(“%d atoi\n”, n);
+	return (0);
+}
