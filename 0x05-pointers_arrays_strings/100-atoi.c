@@ -13,17 +13,22 @@ int _atoi(char *s)
 	unsigned long num = 0;
 	int current;
 	int end = 0;
+	int reached_num = 0;
 
-	while((*(s + len) != '\0'))
+	while ((*(s + len) != '\0'))
 	{
-		len++;
-		if (s[len] == 45)
+		if (s[len] == 45 && reached_num != 1)
+		{
 			multi = multi * -1;
+			if (s[len + 1] >= 48 && s[len + 1] <= 57)
+				reached_num = 1;
+		}
 		if (s[len] >= 48 && s[len] <= 57)
 			num_count++;
+		len++;
 	}
 
-	if(num_count == 0)
+	if (num_count == 0)
 	{
 		return (0);
 	}
@@ -37,7 +42,7 @@ int _atoi(char *s)
 				current = s[i] - 48;
 				num += num * 10 + (current);
 			}
-			while ( s[i + 1] < 48 && s[i + 1] > 57)
+			while (s[i + 1] < 48 && s[i + 1] > 57)
 				end = 1;
 		}
 	}
