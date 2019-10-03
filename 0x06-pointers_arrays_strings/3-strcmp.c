@@ -14,13 +14,13 @@ int _strcmp(char *s1, char *s2)
 
 	while (s1[s1len] != '\0')
 	{
-	        s1len++;
+		s1len++;
 	}
 	while (s2[s2len] != '\0')
 	{
 		s2len++;
 	}
-	if ( s2len >= s1len)
+	if (s2len >= s1len)
 		len = s1len;
 	else
 		len = s2len;
