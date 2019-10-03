@@ -6,14 +6,19 @@
  */
 char *rot13(char *s)
 {
-	int i;
-
+	int i, j;
+	char org[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char rot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		(((s[i] >= 65 && s[i] <= 77) || (s[i] >= 97 && s[i] <= 109))
-		 && (s[i] += 13)) ||
-		(((s[i] >= 78 && s[i] <= 90) || (s[i] >= 110 && s[i] <= 122))
-		 && (s[i] -= 13));
+		for (j = 0; j < 52; j++)
+		{
+			if (org[j] == s[i])
+			{
+				s[i] = rot[j];
+				break;
+			}
+		}
 	}
 	return (s);
 }
