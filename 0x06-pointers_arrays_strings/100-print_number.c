@@ -5,33 +5,36 @@
  */
 void print_number(int n)
 {
-	int limit;
-	int a;
-	int dividor = 1;
+	int div = 1;
+	int f;
+	int num;
+	int bigger_than_10 = 0;
 
-	a = n % 10;
+	f = n % 10;
 	n = n / 10;
-	if (n < 0 || a < 0)
+
+	if (n < 0)
 	{
-		n = -n;
-		a = -a;
+		n *= -1;
+		f *= -1;
 		_putchar('-');
 	}
-	while (n / dividor >= 10)
-		dividor = dividor * 10;
-	limit = dividor;
-	if (n < 10 && n != 0)
+	if (n >= 1)
 	{
-		_putchar(n + '0');
+		bigger_than_10 = 1;
 	}
-	else if (n != 0)
+	num = n;
+	while (num / (div * 10) >= 1)
 	{
-		while (limit >= 1)
-		{
-			_putchar(n / limit + '0');
-			n = n  % limit;
-			limit = limit / 10;
-		}
+		div *= 10;
 	}
-	_putchar(a + '0');
+	for (; div >= 1; div /= 10)
+	{
+		_putchar(n / div + '0');
+		n = n % 10;
+	}
+	if (bigger_than_10 == 1)
+	{
+		_putchar(f + '0');
+	}
 }

@@ -1,19 +1,37 @@
 #include "holberton.h"
 /**
- * rot13 - encode a string using rot13
- * @s: string.
- * Return: string.
+ * print_number - print numbers
+ * @n: integer
  */
-char *rot13(char *s)
+void print_number(int n)
 {
-	int i;
+	int limit;
+	int a;
+	int dividor = 1;
 
-	for (i = 0; s[i] != '\0'; i++)
+	a = n % 10;
+	n = n / 10;
+	if (n < 0 || a < 0)
 	{
-		(((s[i] >= 65 && s[i] <= 77) || (s[i] >= 97 && s[i] <= 109))
-		 && (s[i] += 13)) ||
-		(((s[i] >= 78 && s[i] <= 90) || (s[i] >= 110 && s[i] <= 122))
-		 && (s[i] -= 13));
+		n = -n;
+		a = -a;
+		_putchar('-');
 	}
-	return (s);
+	while (n / dividor >= 10)
+		dividor = dividor * 10;
+	limit = dividor;
+	if (n < 10 && n != 0)
+	{
+		_putchar(n + '0');
+	}
+	else if (n != 0)
+	{
+		while (limit >= 1)
+		{
+			_putchar(n / limit + '0');
+			n = n  % limit;
+			limit = limit / 10;
+		}
+	}
+	_putchar(a + '0');
 }
