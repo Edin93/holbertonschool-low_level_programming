@@ -6,25 +6,13 @@
 void print_number(int n)
 {
 	unsigned int div = 1;
-	unsigned int f;
-	unsigned int num;
-	int bigger_than_10 = 0;
-
-	f = n % 10;
-	n = n / 10;
 
 	if (n < 0)
 	{
 		n *= -1;
-		f *= -1;
 		_putchar('-');
 	}
-	if (n >= 1)
-	{
-		bigger_than_10 = 1;
-	}
-	num = n;
-	while (num / (div * 10) >= 1)
+	while (n / div >= 10)
 	{
 		div *= 10;
 	}
@@ -32,9 +20,5 @@ void print_number(int n)
 	{
 		_putchar(n / div + '0');
 		n = n % div;
-	}
-	if (bigger_than_10 == 1)
-	{
-		_putchar(f + '0');
 	}
 }
