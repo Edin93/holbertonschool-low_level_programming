@@ -5,9 +5,9 @@
  */
 void print_number(int n)
 {
-	int div = 1;
-	int f;
-	int num;
+	unsigned int div = 1;
+	unsigned int f;
+	unsigned int num;
 	int bigger_than_10 = 0;
 
 	f = n % 10;
@@ -31,7 +31,7 @@ void print_number(int n)
 	for (; div >= 1; div /= 10)
 	{
 		_putchar(n / div + '0');
-		n = n % 10;
+		n = n % div;
 	}
 	if (bigger_than_10 == 1)
 	{
