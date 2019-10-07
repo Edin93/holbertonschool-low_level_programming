@@ -4,6 +4,7 @@
  * by s with the constant byte b.
  * @b: the constant byte.
  * @s: the memory area pointed to.
+ * @n: the number of bytes to fill.
  * Return: the pointed memory area s.
  */
 char *_memset(char *s, char b, unsigned int n)
