@@ -17,9 +17,9 @@ unsigned int _strspn(char *s, char *accept)
 		alen++;
 	}
 
-	for (i = 0; s[i] != ' '; i++)
+	for (i = 0; s[i] != ' ' && s[i] != '\0'; i++)
 	{
-		for (j = 0; j <= alen; j++)
+		for (j = 0; j < alen; j++)
 		{
 			if (s[i] == accept[j])
 			{
