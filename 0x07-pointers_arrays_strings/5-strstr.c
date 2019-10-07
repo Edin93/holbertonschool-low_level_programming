@@ -7,7 +7,7 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int i = 0, j;
+	unsigned int i = 0, j;
 	int occur = 0;
 	char *add;
 
