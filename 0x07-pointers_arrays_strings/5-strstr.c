@@ -15,9 +15,10 @@ char *_strstr(char *haystack, char *needle)
 	{
 		if (needle[0] == haystack[i])
 		{
+			occur = 1;
 			add = &haystack[i];
 			j = 0;
-			while (needle[j] != '\0')
+			while (needle[j] != '\0' && haystack[i] != '\0')
 			{
 				if (needle[j] == haystack[i])
 				{
@@ -28,17 +29,14 @@ char *_strstr(char *haystack, char *needle)
 				else
 				{
 					occur = 0;
-					add = 0;
 					break;
 				}
 			}
+			if (occur == 1)
+			{
+				return (add);
+			}
 		}
-		if (occur == 1)
-		{
-			return (add);
-		}
-		add = 0;
-		occur = 0;
 		i++;
 	}
 	return (0);
