@@ -2,7 +2,7 @@
 int len(char *s);
 int cmp(char *s1, char *s2, int len1, int len2, int i, int j);
 /**
- * _strlen_recursion - returns the length of the string.
+ * len - returns the length of the string.
  * @s: string pointer.
  * Return: string length.
  */
@@ -24,6 +24,7 @@ int wildcmp(char *s1, char *s2)
 {
 	int len1 = len(s1);
 	int len2 = len(s2);
+
 	return (cmp(s1, s2, len1 - 1, len2 - 1, 0, 0));
 }
 /**
@@ -32,8 +33,8 @@ int wildcmp(char *s1, char *s2)
  * @s2: string 2
  * @len1: string 1 length
  * @len2: string 2 length
- * i: s1 counter
- * j: s2 counter
+ * @i: s1 counter
+ * @j: s2 counter
  * Return: 1 or 0
  */
 int cmp(char *s1, char *s2, int len1, int len2, int i, int j)
