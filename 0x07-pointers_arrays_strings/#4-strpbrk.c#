@@ -9,7 +9,7 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	int i, j;
+/*	int i, j;
 	int len = 0;
 
 	while (s[len] != '\0')
@@ -27,5 +27,20 @@ char *_strpbrk(char *s, char *accept)
 			}
 		}
 	}
+	return (0);
+*/
+	/* char *acc = accept; */
+	for (;*s; s++)
+	{
+		printf("S NOW IS --->> %s\n", s);
+/*		for (accept = acc;*accept; accept++)
+		{
+			if (*accept == *s)
+			{
+				return (s);
+			}
+		}
+*/
+		}
 	return (0);
 }

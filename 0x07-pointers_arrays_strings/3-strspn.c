@@ -8,7 +8,7 @@
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	int i, j;
+/*	int i, j;
 	int res = 0;
 	int alen = 0;
 
@@ -28,4 +28,15 @@ unsigned int _strspn(char *s, char *accept)
 		}
 	}
 	return (res);
+*/
+	unsigned int n;
+	char *p;
+	for (n = 0 ; *s ; s++, n++)
+	{
+		for (p = accept ; *p && *p != *s ; p++)
+			;
+		if (!*p)
+			break;
+	}
+	return (n);
 }
