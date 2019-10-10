@@ -37,24 +37,6 @@ int wildcmp(char *s1, char *s2)
  * @j: s2 counter
  * Return: 1 or 0
  */
-/*int cmp(char *s1, char *s2, int len1, int len2, int i, int j)
-{
-	if (s1[i] == s2[j] && (j < len1 || j < len2))
-	{
-		return (cmp(s1, s2, len1, len2, i + 1, j + 1));
-	}
-	else if (s1[i] != '\n' && s2[j] == '*' && (j < len1 || j < len2))
-	{
-		return (cmp(s1, s2, len1, len2, i, j + 1));
-	}
-	else if (j == len1 && j == len2)
-	{
-		return (1);
-	}
-	else
-		return (0);
-}
-*/
 int cmp(char *s1, char *s2, int len1, int len2, int i, int j)
 {
 	if ((s1[i] == s2[j] || s2[j] == '*') && s1[i] != '\0')
@@ -71,7 +53,7 @@ int cmp(char *s1, char *s2, int len1, int len2, int i, int j)
 				return (cmp(s1, s2, len1, len2, i + 1, j));
 		}
 	}
-	else if ((s2[j] != s1[i] && s2[j] != '*' ) ||
+	else if ((s2[j] != s1[i] && s2[j] != '*') ||
 		 (s2[j] == '*' && s1[i] == '\0'))
 	{
 		return (0);
