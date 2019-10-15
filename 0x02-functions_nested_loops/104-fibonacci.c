@@ -9,7 +9,6 @@ int main(void)
 	long U0 = 1;
 	long U1 = 2;
 	long Un = 0;
-	long l0 = 1000000000000;
 	long l1 = 4294967295;
 	long l2 = 1000000000;
 
@@ -22,16 +21,8 @@ int main(void)
 
 		if (Un > l1)
 		{
-			if (Un > l0)
-			{
-				printf("%lu", Un / l0);
-				printf("%lu", Un / l0);
-			}
-			else
-			{
-				printf("%lu", Un / l2);
-				printf("%lu", Un % l2);
-			}
+			printf("%lu", Un / l2);
+			printf("%lu", Un % l2);
 		}
 		else
 		{
