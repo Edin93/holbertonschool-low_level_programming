@@ -20,9 +20,12 @@ char *argstostr(int ac, char **av)
 			size++;
 		}
 	}
-	p = malloc(sizeof(char) * size + 1 + size);
+	p = malloc(sizeof(char) * size + 1 + ac);
 	if (p == NULL)
+	{
+		free(p);
 		return (NULL);
+	}
 	c = 0;
 	for (i = 0; i < ac; i++)
 	{
