@@ -12,7 +12,6 @@ char *str_concat(char *s1, char *s2)
 	int len1 = 0;
 	int len2 = 0;
 	int len, i = 0;
-	int j = 0;
 	char *p;
 
 	if (*s1 != '\0')
@@ -34,11 +33,11 @@ char *str_concat(char *s1, char *s2)
 		p[i] = s1[i];
 		i++;
 	}
-	while (j < len2)
+	i = 0;
+	while (i < len2)
 	{
-		p[i] = s2[j];
+		p[i + len1] = s2[i];
 		i++;
-		j++;
 	}
 	p[i] = '\0';
 	return (p);
