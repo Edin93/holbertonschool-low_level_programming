@@ -27,12 +27,13 @@ char **strtow(char *str)
 			if (str[j] != 32)
 				len++;
 			else
-				break;
+			{
+				p[i] = malloc(1 + len * sizeof(char));
+				for (k = 0; k < len; k++)
+					p[i][k] = str[j - len + k];
+				p[i][len] = '\0';
+			}
 		}
-		p[i] = malloc(1 + len * sizeof(char));
-		for (k = 0; k < len; k++)
-			p[i][k] = str[j - len + k];
-		p[i][len] = '\0';
 	}
 	return (p);
 }
