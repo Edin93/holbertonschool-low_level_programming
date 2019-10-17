@@ -1,6 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+/**
+ * len - get string length.
+ * Return: return string length.
+ */
+int len(char *s)
+{
+	unsigned int i = 0;
+
+	while (s[i] != '\0')
+		i++;
+	return (i);
+}
 /**
  * string_nconcat - concatenates 2 strings
  * @s1: string one
@@ -17,11 +28,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s1 == '\0')
 		len1 = 0;
 	else
-		len1 = strlen(s1);
+		len1 = len(s1);
 	if (s2 == '\0')
 		len2 = 0;
 	else
-		len2 = strlen(s2);
+		len2 = len(s2);
 	if (n >= len2)
 		limit = len2;
 	else
