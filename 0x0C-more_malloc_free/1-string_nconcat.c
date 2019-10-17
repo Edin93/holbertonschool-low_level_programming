@@ -2,6 +2,7 @@
 #include <stdlib.h>
 /**
  * len - get string length.
+ * @s: string to calculat its length.
  * Return: return string length.
  */
 int len(char *s)
