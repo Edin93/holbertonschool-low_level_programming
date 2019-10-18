@@ -40,13 +40,14 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	}
 	else if (new_size < old_size)
 	{
-		printf("ptr value is: %p\n", ptr);
-		ptr = (char*)ptr + 1;
-		for (i = old_size; i > new_size; i--)
+		char *op = ptr;
+		char *newP = malloc(new_size);
+		for (i = 0; i < new_size; i++)
 		{
-			free((int*)ptr);
+			newP[i] = op[i];
 		}
-		printf("ptr value is: %p\n", (void *)ptr);
+		free(ptr);
+		return (newP);
 	}
 	if (ptr == NULL)
 	{
