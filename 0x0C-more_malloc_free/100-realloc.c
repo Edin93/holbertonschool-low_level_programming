@@ -31,9 +31,9 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	{
 		free(ptr);
 		if (new_size > old_size)
-			limit = new_size;
-		else
 			limit = old_size;
+		else
+			limit = size_size;
 		np = malloc(limit);
 		if (np == NULL)
 			free(np);
