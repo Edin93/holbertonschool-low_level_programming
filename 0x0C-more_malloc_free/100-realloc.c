@@ -33,10 +33,11 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 			limit = new_size;
 		else
 			limit = old_size;
+		limit = new_size;
 		np = malloc(limit);
 		if (np == NULL)
 			free(np);
-		for (i = 0; i < limit; i++)
+		for (i = 0; i < old_size; i++)
 		{
 			np[i] = p[i];
 		}
