@@ -9,7 +9,7 @@ int getNum(char *p);
  * @argv: arguments vector.
  * Return: void.
  */
-void main(int argc, char **argv)
+int main(int argc, char **argv)
 {
 	char *a = argv[1];
 	char *b = argv[2];
@@ -26,6 +26,7 @@ void main(int argc, char **argv)
 		printf("Error\n");
 		exit(98);
 	}
+	return (0);
 }
 /**
  * validateNum - validate number or not.
