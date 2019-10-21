@@ -2,7 +2,6 @@
 #include <stdlib.h>
 char *validateNum(char *p);
 int len(char *p);
-int getNum(char *p);
 /**
  * main - multiply 2 positive numbers.
  * @argc: arguments count.
@@ -16,10 +15,22 @@ int main(int argc, char **argv)
 
 	if (argc == 3 && validateNum(a) != NULL && validateNum(b) != NULL)
 	{
-		int n1 = getNum(a);
-		int n2 = getNum(b);
+		int i, len1 = len(a), len2 = len(b);
+		char *big, *small, *result;
 
-		printf("%d\n", n1 * n2);
+		if (len1 >= len2)
+		{
+			big = a;
+			small = b;
+		}
+		else
+		{
+			big = b;
+			small = a;
+		}
+
+
+		printf("%d\n", r);
 	}
 	else
 	{
@@ -43,22 +54,6 @@ char *validateNum(char *p)
 			return (NULL);
 	}
 	return (p);
-}
-/**
- * getNum - get number from its pointer to char.
- * @p: pointer to char.
- * Return: number as int.
- */
-int getNum(char *p)
-{
-	int i, len1 = len(p);
-	int v = 0;
-
-	for (i = 0; i < len1; i++)
-	{
-		v = v * 10 + (p[i] - 48);
-	}
-	return (v);
 }
 /**
  * len - calculate number length (number of digits).
