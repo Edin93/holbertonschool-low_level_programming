@@ -1,50 +1,42 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "3-calc.h"
-
 /**
- * op_add - addition two numbers
+ * op_add - operate on 2 strings.
  * @a: integer
  * @b: integer
- * Return: integer
+ * Return: result
  */
-
 int op_add(int a, int b)
 {
 	return (a + b);
 }
-
 /**
- * op_sub - Substract two numbers
+ * op_sub - operate on 2 strings.
  * @a: integer
  * @b: integer
- * Return: integer
+ * Return: result
  */
-
 int op_sub(int a, int b)
 {
 	return (a - b);
 }
-
 /**
- * op_mul - Multiplicate two numbers
+ * op_mul - operate on 2 strings.
  * @a: integer
  * @b: integer
- * Return: integer
+ * Return: result
  */
-
 int op_mul(int a, int b)
 {
 	return (a * b);
 }
-
 /**
- * op_div - Division of a by b
+ * op_div - operate on 2 strings.
  * @a: integer
  * @b: integer
- * Return: integer
+ * Return: result
  */
-
 int op_div(int a, int b)
 {
 	if (b == 0)
@@ -54,14 +46,12 @@ int op_div(int a, int b)
 	}
 	return (a / b);
 }
-
 /**
- * op_mod - Mod
+ * op_mod - operate on 2 strings.
  * @a: integer
  * @b: integer
- * Return: integer
+ * Return: result
  */
-
 int op_mod(int a, int b)
 {
 	if (b == 0)
