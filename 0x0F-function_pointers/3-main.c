@@ -1,7 +1,7 @@
+#include "3-calc.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "3-calc.h"
 /**
  * main - launch functions.
  * @argc: arguments count.
