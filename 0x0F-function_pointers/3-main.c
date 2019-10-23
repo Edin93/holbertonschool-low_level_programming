@@ -17,15 +17,15 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	int (*p)(int, int) = get_op_func(argv[2]);
+	n1 = atoi(argv[1]);
+	n2 = atoi(argv[3]);
+	res = p(n1, n2);
 
 	if (p == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	n1 = atoi(argv[1]);
-	n2 = atoi(argv[3]);
-	res = p(n1, n2);
 	printf("%d\n", res);
 	return (0);
 }
