@@ -15,22 +15,14 @@ int main (int argc, char * argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	if (argv[2][0] != '+' || argv[2][0] != '-' || argv[2][0] != '*'
-	    || argv[2][0] != '/' || argv[2][0] != '%')
-	if (argv[2][0] != '+')
+	int (*p)(int, int) = get_op_func(argv[2]);
+
+	if (p == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	if (atoi(argv[3]) == 0 && (argv[2][0] == '/' || argv[2][0] == '%'))
-	{
-		printf("Error\n");
-		exit(100);
-	}
-
-	int (*p)(int, int) = get_op_func(argv[2]);
 	int res = p(atoi(argv[1]), atoi(argv[3]));
-
 	printf("%d\n", res);
 	return (0);
 }
