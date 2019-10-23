@@ -32,7 +32,7 @@ int op_mul(int a, int b)
 	return (a * b);
 }
 /**
- * op_add - operate on 2 strings.
+ * op_div - operate on 2 strings.
  * @a: integer
  * @b: integer
  * Return: result

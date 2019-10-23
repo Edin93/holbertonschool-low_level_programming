@@ -7,7 +7,7 @@
  * @argv: arguments vector.
  * Return: result.
  */
-int main (int argc, char * argv[])
+int main(int argc, char *argv[])
 {
 	int res, n1, n2;
 
