@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "3-calc.h"
 /**
  * main - launch functions.
@@ -20,13 +21,13 @@ int main(int argc, char *argv[])
 
 	n1 = atoi(argv[1]);
 	n2 = atoi(argv[3]);
-	res = p(n1, n2);
 
 	if (p == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
+	res = p(n1, n2);
 	printf("%d\n", res);
 	return (0);
 }
