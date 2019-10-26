@@ -52,7 +52,6 @@ void print_all(const char * const format, ...)
 		{'i', pi},
 		{'f', pf},
 		{'s', ps},
-		{NULL, NULL}
 	};
 	int i = 0, j;
 	va_list things;
