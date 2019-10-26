@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(2);
 	}
-	p = (char *)main;
+	p = (char *)&main;
 
 	for (i = 0; i < nb; i++)
 	{
