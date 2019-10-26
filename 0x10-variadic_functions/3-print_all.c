@@ -69,7 +69,7 @@ void print_all(const char * const format, ...)
 			{
 				func = forms[j].f;
 				func(things);
-				if (format[i + 1] != '\0')
+				if (format[i + 1])
 					printf(", ");
 			}
 			j++;
