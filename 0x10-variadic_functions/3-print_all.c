@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdarg.h>
+#include <stdbool.h>
 #include "variadic_functions.h"
 /**
  * pc - print character
@@ -67,10 +68,10 @@ void print_all(const char * const format, ...)
 		{
 			if (format[i] == forms[j].name[0])
 			{
+				bool t = ((i > 0) && printf(", "));
+				(void)t;
 				func = forms[j].f;
 				func(things);
-				if (format[i + 1])
-					printf(", ");
 			}
 			j++;
 		}
