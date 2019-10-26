@@ -60,7 +60,7 @@ void print_all(const char * const format, ...)
 
 	va_start(things, format);
 
-	while (format[i] != '\0')
+	while (format[i] != '\0' && format != NULL)
 	{
 		j = 0;
 		while (forms[j].name != NULL)
