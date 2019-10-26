@@ -1,81 +1,39 @@
 #include <stdio.h>
+#include <string.h>
 #include <stdarg.h>
-/**
- * struct form - format struct.
- * @name: format name.
- * @type: type.
- * @f: function to use.
- */
-typedef struct form
-{
-	char *name;
-	type type;
-	void (*f)(int n, ...);
-} form;
+#include "variadic_functions.h"
 /**
  * pc - print character
- * @n: number
  */
-void pc(int n, ...)
+void pc(va_list list)
 {
-	va_list list;
-
-	if (n != 0)
-	{
-		va_start(list, n);
-		printf("%c", va_arg(list, char));
-	}
-	va_end(list);
+		printf("%c", va_arg(list, int));
 }
 /**
  * pi - print integer
- * @n: number
  */
-void pi(int n, ...)
+void pi(va_list list)
 {
-	va_list list;
-
-	if (n != 0)
-	{
-		va_start(list, n);
-		printf("%d", va_arg(list, int));
-	}
-	va_end(list);
+	printf("%d", va_arg(list, int));
 }
 /**
  * pf - print float
- * @n: number
  */
-void pf(int n, ...)
+void pf(va_list list)
 {
-	va_list list;
-
-	if (n != 0)
-	{
-		va_start(list, n);
-		printf("%f", va_arg(list, float));
-	}
-	va_end(list);
+	printf("%f", va_arg(list, double));
 }
 /**
  * ps - print string
- * @n: number
  */
-void ps(int n, ...)
+void ps(va_list list)
 {
-	va_list list;
+	char *s = va_arg(list, char *);
 
-	if (n != 0)
-	{
-		va_start(list, n);
-		char *s = va_arg(list, *char);
-
-		if (s == NULL)
-			printf("(nil)");
-		else
-			printf("%s", s);
-	}
-	va_end(list);
+	if (s != NULL)
+		printf("%s", s);
+	else
+		printf("(nil)");
 }
 /**
  * print_all - prints anything
@@ -84,27 +42,32 @@ void ps(int n, ...)
 void print_all(const char * const format, ...)
 {
 	form forms[] = {
-		{"c", char, pc},
-		{"i", int, pi},
-		{"f", float, pf},
-		{"s", *char, ps},
-		{NULL, NULL}
+		{'c', pc},
+		{'i', pi},
+		{'f', pf},
+		{'s', ps}
 	};
 	int i = 0, j;
 	va_list things;
+	void (*func)(va_list);
+	va_start(things, format);
 
 	while (format[i] != '\0')
 	{
-		va_start(things, 1);
 		j = 0;
-		while (forms[j].name != NULL)
+		while (j < 5)
 		{
 			if (format[i] == forms[j].name)
 			{
-				forms[j].f(1, va_arg(things, forms[j].type));
-				break;
+				func = forms[j].f;
+				func(things);
+				if (format[i + 1] != '\0')
+					printf(", ");
 			}
+			j++;
 		}
+		i++;
 	}
 	printf("\n");
+	va_end(things);
 }
