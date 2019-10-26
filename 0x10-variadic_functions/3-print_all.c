@@ -35,7 +35,10 @@ void ps(va_list list)
 	char *s = va_arg(list, char *);
 
 	if (s != NULL)
+	{
 		printf("%s", s);
+		return;
+	}
 	printf("(nil)");
 }
 /**
