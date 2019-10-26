@@ -48,10 +48,11 @@ void ps(va_list list)
 void print_all(const char * const format, ...)
 {
 	form forms[] = {
-		{'c', pc},
-		{'i', pi},
-		{'f', pf},
-		{'s', ps},
+		{"c", pc},
+		{"i", pi},
+		{"f", pf},
+		{"s", ps},
+		{NULL, NULL}
 	};
 	int i = 0, j;
 	va_list things;
@@ -62,9 +63,9 @@ void print_all(const char * const format, ...)
 	while (format[i] != '\0')
 	{
 		j = 0;
-		while (j < 4)
+		while (forms[j].name != NULL)
 		{
-			if (format[i] == forms[j].name)
+			if (format[i] == forms[j].name[0])
 			{
 				func = forms[j].f;
 				func(things);

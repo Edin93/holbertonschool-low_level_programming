@@ -8,7 +8,7 @@
  */
 typedef struct form
 {
-	char name;
+	char *name;
 	void (*f)(va_list);
 } form;
 int _putchar(char c);
