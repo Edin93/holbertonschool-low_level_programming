@@ -4,6 +4,7 @@
 #include "variadic_functions.h"
 /**
  * pc - print character
+ * @list: arguments list.
  */
 void pc(va_list list)
 {
@@ -11,6 +12,7 @@ void pc(va_list list)
 }
 /**
  * pi - print integer
+ * @list: arguments list.
  */
 void pi(va_list list)
 {
@@ -18,6 +20,7 @@ void pi(va_list list)
 }
 /**
  * pf - print float
+ * @list: arguments list.
  */
 void pf(va_list list)
 {
@@ -25,6 +28,7 @@ void pf(va_list list)
 }
 /**
  * ps - print string
+ * @list: arguments list.
  */
 void ps(va_list list)
 {
@@ -49,6 +53,7 @@ void print_all(const char * const format, ...)
 	int i = 0, j;
 	va_list things;
 	void (*func)(va_list);
+
 	va_start(things, format);
 
 	while (format[i] != '\0')
