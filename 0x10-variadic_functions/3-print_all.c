@@ -68,10 +68,10 @@ void print_all(const char * const format, ...)
 		{
 			if (format[i] == forms[j].name[0])
 			{
-				bool t = ((i > 0) && printf(", "));
-				(void)t;
 				func = forms[j].f;
 				func(things);
+				bool t = ((format[i + 1]) && printf(", "));
+				(void)t;
 			}
 			j++;
 		}
