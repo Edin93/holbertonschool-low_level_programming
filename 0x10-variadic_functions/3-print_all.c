@@ -32,8 +32,7 @@ void ps(va_list list)
 
 	if (s != NULL)
 		printf("%s", s);
-	else
-		printf("(nil)");
+	printf("(nil)");
 }
 /**
  * print_all - prints anything
