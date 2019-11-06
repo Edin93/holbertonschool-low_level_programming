@@ -10,8 +10,6 @@ size_t print_listint_safe(const listint_t *head)
 	int is_loop = 0;
 	const listint_t *sp = head;
 	const listint_t *fp = head;
-	const listint_t *p = head;
-	const listint_t *tmp = head;
 
 	if (head == NULL)
 		exit(98);
@@ -22,7 +20,7 @@ size_t print_listint_safe(const listint_t *head)
 		fp = fp->next->next;
 		if (sp == fp)
 		{
-			tmp = sp->next->next;
+			fp = sp->next->next;
 			is_loop = 1;
 			break;
 		}
@@ -31,13 +29,14 @@ size_t print_listint_safe(const listint_t *head)
 	{
 		sp->next->next = NULL;
 	}
-	while (p != NULL)
+	while (head != NULL)
 	{
-		printf("%d\n", p->n);
-		p = p->next;
+		printf("%d\n", head->n);
+		head = head->next;
 		count++;
 	}
-	if (is_loop == 1)
-		printf("-> [%p] %d\n", (void *)tmp, tmp->n);
+	if (is_loop == 1 && fp != NULL)
+		printf("-> [%p] %d\n", (void *)fp, fp->n);
+
 	return (count);
 }
