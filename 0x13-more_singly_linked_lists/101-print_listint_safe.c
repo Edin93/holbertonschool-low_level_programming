@@ -11,6 +11,7 @@ size_t print_listint_safe(const listint_t *head)
 	const listint_t *sp = head;
 	const listint_t *fp = head;
 	const listint_t *p = head;
+	const listint_t *tmp = head;
 
 	if (head == NULL)
 		exit(98);
@@ -21,6 +22,7 @@ size_t print_listint_safe(const listint_t *head)
 		fp = fp->next->next;
 		if (sp == fp)
 		{
+			tmp = sp->next->next;
 			is_loop = 1;
 			break;
 		}
@@ -35,5 +37,7 @@ size_t print_listint_safe(const listint_t *head)
 		p = p->next;
 		count++;
 	}
+	if (is_loop == 1)
+		printf("-> [%p] %d\n", (void *)tmp, tmp->n);
 	return (count);
 }
