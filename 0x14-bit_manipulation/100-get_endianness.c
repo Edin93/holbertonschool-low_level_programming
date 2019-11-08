@@ -12,6 +12,6 @@ int get_endianness(void)
 
 	if ((*p >> 24) & 1)
 		return (1); /* little endian */
-	else
+	if (!(*p >> 24) & 1)
 		return (0); /* big endian */
 }
