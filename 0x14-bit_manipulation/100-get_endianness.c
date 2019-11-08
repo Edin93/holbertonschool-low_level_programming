@@ -5,8 +5,8 @@
  */
 int get_endianness(void)
 {
-	int *p;
-	int a = 1;
+	char *p;
+	char a = '1';
 
 	p = &a;
 
@@ -14,5 +14,4 @@ int get_endianness(void)
 		return (1); /* little endian */
 	else
 		return (0); /* big endian */
-	return (0);
 }
