@@ -5,10 +5,10 @@
  */
 int get_endianness(void)
 {
-	int a = 1;
-	char *p = (char *)&a;
+	int a = 16777216;
+	int *p = &a;
 
-	if ((*p >> 24) & 1)
-		return (1); /* little endian */
-	return (0); /* big endian */
+	if (!(*p >> 24) & 1)
+		return (0); /* little endian */
+	return (1); /* big endian */
 }
