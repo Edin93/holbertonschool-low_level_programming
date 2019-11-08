@@ -5,10 +5,9 @@
  */
 int get_endianness(void)
 {
-	char *p;
-	char a = '1';
+	int a = 1;
 
-	p = &a;
+	char *p = (char *)&a;
 
 	if ((*p >> 24) & 1)
 		return (1); /* little endian */
