@@ -7,7 +7,7 @@
  */
 void perr1(char *err, char *fname, int num)
 {
-	dprintf(STDERR_FILENO, "%s %s\n", err, fname);
+	dprintf(STDERR_FILENO, "%s%s\n", err, fname);
 	exit(num);
 }
 /**
@@ -18,7 +18,7 @@ void perr1(char *err, char *fname, int num)
  */
 void perr2(char *err, int fdesc, int num)
 {
-	dprintf(STDERR_FILENO, "%s %d\n", err, fdesc);
+	dprintf(STDERR_FILENO, "%s%d\n", err, fdesc);
 	exit(num);
 }
 /**
