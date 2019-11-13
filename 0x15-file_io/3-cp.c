@@ -43,11 +43,11 @@ int main(int argc, char *argv[])
 	file_from = argv[1];
 	file_to = argv[2];
 
-	ffd = open(file_from, O_RDWR);
+	ffd = open(file_from, O_RDONLY);
 	if (ffd == -1)
 		perr1("Error: Can't read from file ", argv[1], 98);
 
-	ftd = open(file_to, O_CREAT | O_TRUNC | O_APPEND | O_RDWR, 0664);
+	ftd = open(file_to, O_CREAT | O_TRUNC | O_RDWR, 0664);
 	if (ftd == -1)
 		perr1("Error: Can't write to ", argv[2], 99);
 
@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
 	while ((rff = read(ffd, content, 1024)) != 0)
 	{
 		if (rff == -1)
-			return (-1);
+			perr1("Error: Can't read from file ", argv[1], 98);
 		wft = write(ftd, content, rff);
 		if (wft == -1)
 			perr1("Error: Can't write to ", argv[2], 99);
