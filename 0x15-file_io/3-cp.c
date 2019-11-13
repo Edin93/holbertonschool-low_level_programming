@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 	file_from = argv[1];
 	file_to = argv[2];
 
-	ffd = open(file_from, O_RDWR);
+	ffd = open(file_from, O_RDONLY);
 	if (ffd == -1)
 		perr1("Error: Can't read from file ", argv[1], 98);
 
