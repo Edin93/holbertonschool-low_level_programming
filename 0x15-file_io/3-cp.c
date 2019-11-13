@@ -7,10 +7,7 @@
  */
 void perr1(char *err, char *fname, int num)
 {
-	if (fname == NULL)
-		dprintf(STDERR_FILENO, "%s\n", err);
-	else
-		dprintf(STDERR_FILENO, "%s %s\n", err, fname);
+	dprintf(STDERR_FILENO, "%s %s\n", err, fname);
 	exit(num);
 }
 /**
@@ -37,7 +34,10 @@ int main(int argc, char *argv[])
 	int cff, cft;
 
 	if (argc != 3)
-		perr1("Usage: cp file_from file_to", NULL, 97);
+	{
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
+	}
 
 	file_from = argv[1];
 	file_to = argv[2];
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 	if (ffd == -1)
 		perr1("Error: Can't read from file ", argv[1], 98);
 
-	ftd = open(file_to, O_CREAT | O_TRUNC | O_RDWR, 0664);
+	ftd = open(file_to, O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (ftd == -1)
 		perr1("Error: Can't write to ", argv[2], 99);
 
