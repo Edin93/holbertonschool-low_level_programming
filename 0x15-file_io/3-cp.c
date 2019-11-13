@@ -33,12 +33,11 @@ void perr2(char *err, int fdesc, int num)
 int main(int argc, char *argv[])
 {
 	char *file_from, *file_to, *content;
-	ssize_t ffd, ftd;
-	ssize_t rff, wft;
+	ssize_t ffd, ftd, rff, wft;
 	int cff, cft;
 
 	if (argc != 3)
-		perr1("Usage: cp file_from file_to\n", NULL, 97);
+		perr1("Usage: cp file_from file_to", NULL, 97);
 
 	file_from = argv[1];
 	file_to = argv[2];
