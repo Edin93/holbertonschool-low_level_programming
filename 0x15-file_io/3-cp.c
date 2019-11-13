@@ -50,14 +50,14 @@ int main(int argc, char *argv[])
 	if (ftd == -1)
 		perr1("Error: Can't write to ", argv[2], 99);
 
-	while ((rff = read(ffd, content, 1024)) != 0)
+	while ((rff = read(ffd, content, 1024)) > 0)
 	{
-		if (rff == -1)
-			perr1("Error: Can't read from file ", argv[1], 98);
 		wft = write(ftd, content, rff);
 		if (wft == -1 || wft != rff)
 			perr1("Error: Can't write to ", argv[2], 99);
 	}
+	if (rff == -1)
+		perr1("Error: Can't read from file ", argv[1], 98);
 
 	cff = close(ffd);
 	if (cff == -1)
