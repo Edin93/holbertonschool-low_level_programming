@@ -32,7 +32,7 @@ void perr2(char *err, int fdesc, int num)
  */
 int main(int argc, char *argv[])
 {
-	char *file_from, *file_to, *content;
+	char *file_from, *file_to, content[1024];
 	ssize_t ffd, ftd, rff, wft;
 	int cff, cft;
 
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 	file_from = argv[1];
 	file_to = argv[2];
 
-	ffd = open(file_from, O_RDONLY);
+	ffd = open(file_from, O_RDWR);
 	if (ffd == -1)
 		perr1("Error: Can't read from file ", argv[1], 98);
 
@@ -50,13 +50,12 @@ int main(int argc, char *argv[])
 	if (ftd == -1)
 		perr1("Error: Can't write to ", argv[2], 99);
 
-	content = malloc(sizeof(char) * 1024);
 	while ((rff = read(ffd, content, 1024)) != 0)
 	{
 		if (rff == -1)
 			perr1("Error: Can't read from file ", argv[1], 98);
 		wft = write(ftd, content, rff);
-		if (wft == -1)
+		if (wft == -1 || wft != rff)
 			perr1("Error: Can't write to ", argv[2], 99);
 	}
 
