@@ -3,7 +3,7 @@
  * perr1 - print error 1.
  * @err: error message.
  * @fname: file name.
- * num: exit status number.
+ * @num: exit status number.
  */
 void perr1(char *err, char *fname, int num)
 {
@@ -11,6 +11,17 @@ void perr1(char *err, char *fname, int num)
 		dprintf(STDERR_FILENO, "%s\n", err);
 	else
 		dprintf(STDERR_FILENO, "%s %s\n", err, fname);
+	exit(num);
+}
+/**
+ * perr2 - print error 2.
+ * @err: error message.
+ * @fdesc: file descriptor.
+ * @num: exit status number.
+ */
+void perr2(char *err, int fdesc, int num)
+{
+	dprintf(STDERR_FILENO, "%s %d\n", err, fdesc);
 	exit(num);
 }
 /**
@@ -24,7 +35,7 @@ int main(int argc, char *argv[])
 	char *file_from, *file_to, *content;
 	ssize_t ffd, ftd;
 	ssize_t rff, wft;
-/*	int cff, cft;*/
+	int cff, cft;
 
 	if (argc != 3)
 		perr1("Usage: cp file_from file_to\n", NULL, 97);
@@ -34,7 +45,7 @@ int main(int argc, char *argv[])
 	ffd = open(file_from, O_RDONLY);
 
 	if (ffd == -1)
-		perr1( "Error: Can't read from file ", argv[1], 98);
+		perr1("Error: Can't read from file ", argv[1], 98);
 
 	ftd = open(file_to, O_CREAT | O_TRUNC | O_APPEND | O_RDWR, 0664);
 
@@ -52,8 +63,12 @@ int main(int argc, char *argv[])
 			perr1("Error: Can't write to ", argv[2], 99);
 	}
 
-	close(ffd);
-	close(ftd);
+	cff = close(ffd);
+	if (cff == -1)
+		perr2("Error: Can't close fd ", ffd, 100);
+	cft = close(ftd);
+	if (cft == -1)
+		perr2("Error: Can't close fd ", ftd, 100);
 
 	return (0);
 }
