@@ -61,10 +61,10 @@ int main(int argc, char *argv[])
 
 	cff = close(ffd);
 	if (cff == -1)
-		perr2("Error: Can't close fd ", ffd, 100);
+		perr2("Error: Can't close fd ", cff, 100);
 	cft = close(ftd);
 	if (cft == -1)
-		perr2("Error: Can't close fd ", ftd, 100);
+		perr2("Error: Can't close fd ", cft, 100);
 
 	return (0);
 }
