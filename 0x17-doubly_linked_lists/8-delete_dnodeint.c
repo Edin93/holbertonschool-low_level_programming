@@ -13,11 +13,15 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	if (head == NULL)
 		return (-1);
 
-	if (index == 0 && head != NULL)
+	if (index == 0 && tmp)
 	{
+		printf("------ SHIT 1 ------\n");
 		free(tmp);
+		printf("------ SHIT 2 ------\n");
 		if ((*head)->next)
 			*head = tmp->next;
+		else
+			*head = NULL;
 		return (1);
 	}
 
