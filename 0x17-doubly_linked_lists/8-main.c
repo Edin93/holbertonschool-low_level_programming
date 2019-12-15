@@ -26,13 +26,13 @@ int main(void)
 	delete_dnodeint_at_index(&head, 7);
 	print_dlistint(head);
 	printf("-----------------\n");
+	delete_dnodeint_at_index(&head, 6);
+	print_dlistint(head);
+	printf("-----------------\n");
 	delete_dnodeint_at_index(&head, 4);
 	print_dlistint(head);
 	printf("-----------------\n");
-	delete_dnodeint_at_index(&head, 0);
-	print_dlistint(head);
-	printf("-----------------\n");
-	delete_dnodeint_at_index(&head, 0);
+	delete_dnodeint_at_index(&head, 1);
 	print_dlistint(head);
 	printf("-----------------\n");
 	delete_dnodeint_at_index(&head, 0);
