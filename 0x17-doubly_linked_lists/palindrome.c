@@ -11,9 +11,9 @@ int isPali(long r)
 	while (str[len])
 	       len++;
 
-	for (i = 0; i < (len / 2); i++)
+	for (i = 0; i < len; i++)
 	{
-		if (str[i] != str[len - 1 -i])
+		if (str[i] - 48 != str[len - 1 -i] - 48)
 		    return (0);
 	}
 
@@ -22,15 +22,18 @@ int isPali(long r)
 int main(void)
 {
 	int i, j;
-	long r, p;
+	long r, p = 0;
 
 	for (i = 100; i < 1000; i++)
 	{
-		for (j = 100; j < 1000; j++)
+		for (j = i; j < 1000; j++)
 		{
 			r = i * j;
-			if (isPali(r) == 1)
+			if (isPali(r) == 1 && r > p)
+			{
+				printf("r = %ld\n", r);
 				p = r;
+			}
 		}
 	}
 	printf("Palindrome = %ld\n", p);
