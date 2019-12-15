@@ -1,5 +1,21 @@
 #include "lists.h"
 /**
+ * dlistint_len - returns the number of elements in a doubly linked list.
+ * @h: list head
+ * Return: number of elements.
+ */
+size_t dlistint_len(const dlistint_t *h)
+{
+	size_t n = 0;
+
+	while (h != NULL)
+	{
+		h = h->next;
+		n++;
+	}
+	return (n);
+}
+/**
  * insert_dnodeint_at_index - insert node at index in a DLL (index starts at 0)
  * @h: DLL's address head.
  * @idx: position at which the new node will be inserted.
@@ -10,41 +26,31 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	unsigned int i = 0;
 	dlistint_t *new, *head = *h;
+	size_t len;
+
+	if (h != NULL && idx == 0)
+		return (add_dnodeint(h, n));
+
+	len = dlistint_len(head);
+	if (len == idx)
+		return (add_dnodeint_end(h, n));
 
 	new = malloc(sizeof(dlistint_t));
 	if (new == NULL)
 		return (NULL);
 	new->n = n;
-	while (head->next)
+	while (head)
 	{
 		if (i == idx)
 		{
-			if (head->prev)
-			{
-				head = head->prev;
-				new->next = head->next;
-				(head->next)->prev = new;
-				head->next = new;
-			}
-			else
-			{
-				new->next = head;
-				new->prev = NULL;
-				head->prev = new;
-				*h = new;
-			}
+			(head->prev)->next = new;
+			new->prev = head->prev;
+			new->next = head;
+			head->prev = new;
 			return (new);
 		}
 		head = head->next;
 		i++;
-	}
-	i++;
-	if (i == idx)
-	{
-		new->next = NULL;
-		new->prev = head;
-		head->next = new;
-		return (new);
 	}
 	return (NULL);
 }
