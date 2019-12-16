@@ -1,0 +1,21 @@
+#!/bin/bash
+find .. -name "_putchar.c" | head -n 1 | xargs cp -t ./
+find .. -name "*islower.c" | head -n 1 | xargs cp -t ./
+find .. -name "*isalpha.c" | head -n 1 | xargs cp -t ./
+find .. -name "*abs.c" | head -n 1 | xargs cp -t ./
+find .. -name "*isupper" | head -n 1 | xargs cp -t ./
+find .. -name "*isdigit.c" | head -n 1 | xargs cp -t ./
+find .. -name "*strlen.c" | head -n 1 | xargs cp -t ./
+find .. -name "*puts.c" | head -n 1 | xargs cp -t ./
+find .. -name "*strcpy.c" | head -n 1 | xargs cp -t ./
+find .. -name "*atoi.c" | head -n 1 | xargs cp -t ./
+find .. -name "*stract.c" | head -n 1 | xargs cp -t ./
+find .. -name "*strncat.c" | head -n 1 | xargs cp -t ./
+find .. -name "*strncpy.c" | head -n 1 | xargs cp -t ./
+find .. -name "*strcmp.c" | head -n 1 | xargs cp -t ./
+find .. -name "*memset.c" | head -n 1 | xargs cp -t ./
+find .. -name "*memcpy.c" | head -n 1 | xargs cp -t ./
+find .. -name "*strchr.c" | head -n 1 | xargs cp -t ./
+find .. -name "*strspn.c" | head -n 1 | xargs cp -t ./
+find .. -name "*strpbrk.c" | head -n 1 | xargs cp -t ./
+find .. -name "*strstr.c" | head -n 1 | xargs cp -t ./
