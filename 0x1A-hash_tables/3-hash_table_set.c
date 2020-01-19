@@ -37,22 +37,29 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	k = malloc(sizeof(char) * len(key));
 	if (k == NULL)
+	{
+		free(node);
 		return (0);
+	}
 	v = malloc(sizeof(char) * len(value));
 	if (v == NULL)
+	{
+		free(node);
+		free(k);
 		return (0);
+	}
 	node->key = k;
 	node->value = v;
 	list_h = arr[index];
 	if (list_h == NULL)
 	{
 		node->next = NULL;
-		list_h = node;
+		arr[index] = node;
 	}
 	else
 	{
 		node->next = list_h;
-		list_h = node;
+		arr[index] = node;
 	}
 	return (1);
 }
