@@ -1,6 +1,7 @@
 #include "hash_tables.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * len - calculates length of a string.
@@ -25,41 +26,43 @@ int len(const char *str)
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *node, *list_h, **arr;
+	hash_node_t *node, *list_h, **arr, *tmp;
 	char *k = NULL, *v = NULL;
 	unsigned long int index, size;
 
+	if (!ht || !key || !value || strlen(key) == 0 || !(ht->array))
+		return (0);
 	arr = (ht)->array;
 	size = ht->size;
 	index = key_index((unsigned char *)key, size);
 	node = malloc(sizeof(hash_node_t));
 	if (node == NULL)
 		return (0);
-	k = malloc(sizeof(char) * len(key));
-	if (k == NULL)
-	{
-		free(node);
-		return (0);
-	}
-	v = malloc(sizeof(char) * len(value));
-	if (v == NULL)
-	{
-		free(node);
-		free(k);
-		return (0);
-	}
+	k = strdup(key);
+	v = strdup(value);
 	node->key = k;
 	node->value = v;
 	list_h = arr[index];
 	if (list_h == NULL)
 	{
 		node->next = NULL;
-		arr[index] = node;
+		ht->array[index] = node;
 	}
 	else
 	{
+		tmp = list_h;
+		while (tmp)
+		{
+			if (strcmp(tmp->key, k) == 0)
+			{
+				free(tmp->value), free(node), free(k);
+				tmp->value = v;
+				return (1);
+			}
+			tmp = tmp->next;
+		}
 		node->next = list_h;
-		arr[index] = node;
+		ht->array[index] = node;
 	}
 	return (1);
 }
