@@ -29,7 +29,7 @@ void hash_table_print(const hash_table_t *ht)
 			while (node)
 			{
 				printf("'%s': '%s'", node->key, node->value);
-				if (i != limit && !node->next)
+				if (i != limit)
 					printf(", ");
 				node = node->next;
 			}
