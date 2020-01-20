@@ -29,13 +29,20 @@ void hash_table_print(const hash_table_t *ht)
 			while (node)
 			{
 				printf("'%s': '%s'", node->key, node->value);
-				if (i != limit)
+				if (i < limit - 1)
 					printf(", ");
+				else
+				{
+					if (node->next)
+					{
+						printf(", ");
+						node = node->next;
+					}
+				}
 				node = node->next;
 			}
 		}
 		i++;
 	}
-	printf("}");
-	printf("\n");
+	printf("}\n");
 }
