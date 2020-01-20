@@ -18,7 +18,6 @@ void hash_table_print(const hash_table_t *ht)
 			limit = i;
 		i++;
 	}
-	printf("limit = %lu\n", limit);
 	i = 0;
 	printf("{");
 	while (i < ht->size)
@@ -30,7 +29,7 @@ void hash_table_print(const hash_table_t *ht)
 			while (node)
 			{
 				printf("'%s': '%s'", node->key, node->value);
-				if (i != limit)
+				if (i != limit && !node->next)
 					printf(", ");
 				node = node->next;
 			}
