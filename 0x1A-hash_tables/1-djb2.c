@@ -1,6 +1,4 @@
 #include "hash_tables.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
  * hash_djb2 - hash function implementing the djb2 algorithm.
