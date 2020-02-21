@@ -15,18 +15,16 @@ def island_perimeter(grid):
     """
     p = 0
     g = grid
-    for ri in range(len(g)):
-        for ci in range(len(g[ri])):
-            if g[ri][ci] == 1:
-                p += 4
-                if g[ri][ci - 1] != len(g[ri]) - 1 and g[ri][ci + 1] == 1:
-                    p -= 1
-                if g[ri][ci] != 0 and g[ri][ci - 1] == 1:
-                    p -= 1
-                pr = ri - 1
-                if g[ri] != 0 and g[pr][ci] == 1:
-                    p -= 1
-                nr = ri + 1
-                if ri != len(g) - 1 and g[nr][ci] == 1:
-                    p -= 1
+    for r in range(len(g)):
+        for c in range(len(g[r])):
+            if g[r][c] == 1:
+                p = p + 4
+                if c != 0 and g[r][c - 1] == 1: #check item on left.
+                    p = p - 1
+                if c != len(g[r]) - 1 and g[r][c + 1] == 1: #check item on 
+                    p = p - 1
+                if r != 0 and g[r - 1][c] == 1: #check item on 
+                    p = p - 1
+                if r != len(g) - 1 and g[r + 1][c] == 1: #check item on 
+                    p = p - 1
     return p
