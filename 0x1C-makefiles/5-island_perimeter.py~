@@ -1,7 +1,0 @@
-#!/usr/bin/python3
-"""
-This module contains the island_perimeter function that returns the perimiter of
-the island described in the grid parameter of the function.
-"""
-
-
