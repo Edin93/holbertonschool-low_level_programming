@@ -19,12 +19,12 @@ def island_perimeter(grid):
         for c in range(len(g[r])):
             if g[r][c] == 1:
                 p = p + 4
-                if c != 0 and g[r][c - 1] == 1: #check item on left.
+                if c != 0 and g[r][c - 1] == 1:  # check left item
                     p = p - 1
-                if c != len(g[r]) - 1 and g[r][c + 1] == 1: #check item on 
+                if c != len(g[r]) - 1 and g[r][c + 1] == 1:  # check right item
                     p = p - 1
-                if r != 0 and g[r - 1][c] == 1: #check item on 
+                if r != 0 and g[r - 1][c] == 1:  # check top item
                     p = p - 1
-                if r != len(g) - 1 and g[r + 1][c] == 1: #check item on 
+                if r != len(g) - 1 and g[r + 1][c] == 1:  # check bottom item
                     p = p - 1
     return p
