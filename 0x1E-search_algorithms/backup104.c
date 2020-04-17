@@ -16,7 +16,7 @@ int rec_search(int *array, int size, int value, int mn, int mx)
 
 	max = mx;
 	min = mn;
-	while (max >= min)
+	if (max >= min)
 	{
 		printf("Searching in array: ");
 		for (i = min; i <= max; i++)
@@ -42,6 +42,8 @@ int rec_search(int *array, int size, int value, int mn, int mx)
 		}
 		return (rec_search(array, size, value, min, max));
 	}
+	if (max == min && array[max] == value)
+		return (max);
 	return (-1);
 }
 

@@ -26,9 +26,9 @@ int rec_search(int *array, int size, int value, int mn, int mx)
 				printf(", ");
 		}
 		printf("\n");
+		mid = (max + min) / 2;
 		if (max == min && array[max] == value)
 			return (max);
-		mid = (max + min) / 2;
 		if (array[mid] == value)
 		{
 			if (array[mid - 1] != value)
@@ -38,7 +38,7 @@ int rec_search(int *array, int size, int value, int mn, int mx)
 		else
 		{
 			if (array[mid] > value)
-				max = mid - 1;
+				max = mid;
 			else if (array[mid] < value)
 				min = mid + 1;
 		}
